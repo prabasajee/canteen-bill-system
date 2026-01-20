@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University Canteen Bill Splitter</title>
+  <meta name="description" content="Quickly split a canteen bill among friends with an optional tip." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>University Canteen Bill Splitter</h1>
+    <p class="tagline">Split fairly. Fast. No fuss.</p>
+  </header>
+
+  <main class="container" role="main">
+    <section class="card">
+      <h2 class="sr-only">Bill Split Form</h2>
+      <form id="splitForm" novalidate>
+        <div class="form-row">
+          <label for="totalAmount">Total Amount</label>
+          <div class="input-wrap">
+            <span class="prefix">$</span>
+            <input id="totalAmount" name="totalAmount" type="number" inputmode="decimal" step="0.01" min="0.01" placeholder="0.00" required aria-describedby="totalAmountHint totalAmountError" />
+          </div>
+          <div id="totalAmountHint" class="hint">Enter the bill total before tip.</div>
+          <div id="totalAmountError" class="error" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="numberOfPeople">Number of People</label>
+          <input id="numberOfPeople" name="numberOfPeople" type="number" inputmode="numeric" step="1" min="1" placeholder="e.g., 3" required aria-describedby="numberOfPeopleError" />
+          <div id="numberOfPeopleError" class="error" aria-live="polite"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="tipPercentage">Tip Percentage (optional)</label>
+          <div class="input-wrap">
+            <input id="tipPercentage" name="tipPercentage" type="number" inputmode="decimal" step="0.01" min="0" placeholder="e.g., 10" aria-describedby="tipPercentageHint tipPercentageError" />
+            <span class="suffix">%</span>
+          </div>
+          <div id="tipPercentageHint" class="hint">Leave blank for no tip.</div>
+          <div id="tipPercentageError" class="error" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Calculate</button>
+          <button type="reset" class="btn">Reset</button>
+        </div>
+      </form>
+
+      <div id="result" class="result hidden" aria-live="polite">
+        <h3>Result</h3>
+        <p class="per-person">Each person owes: <strong id="perPersonAmount">—</strong></p>
+        <div class="breakdown">
+          <p>Total with tip: <span id="totalWithTip">—</span></p>
+          <p>People: <span id="peopleCount">—</span></p>
+          <p>Tip applied: <span id="tipApplied">—</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for students at the university canteen.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
