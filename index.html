@@ -20,7 +20,7 @@
         <div class="form-row">
           <label for="totalAmount">Total Amount</label>
           <div class="input-wrap">
-            <span class="prefix">$</span>
+            <span class="prefix">RS</span>
             <input id="totalAmount" name="totalAmount" type="number" inputmode="decimal" step="0.01" min="0.01" placeholder="0.00" required aria-describedby="totalAmountHint totalAmountError" />
           </div>
           <div id="totalAmountHint" class="hint">Enter the bill total before tip.</div>
@@ -51,9 +51,9 @@
 
       <div id="result" class="result hidden" aria-live="polite">
         <h3>Result</h3>
-        <p class="per-person">Each person owes: <strong id="perPersonAmount">—</strong></p>
+        <p class="per-person">Each person owes: RS <strong id="perPersonAmount">—</strong></p>
         <div class="breakdown">
-          <p>Total with tip: <span id="totalWithTip">—</span></p>
+          <p>Total with tip: RS <span id="totalWithTip">—</span></p>
           <p>People: <span id="peopleCount">—</span></p>
           <p>Tip applied: <span id="tipApplied">—</span></p>
         </div>
